@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Fredoka', sans-serif;
+    background-color: #F5F5F7;
+    font-size: 18px;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #705C53;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    border-radius: 1rem;
+}
+
+.search-container {
+    width: 250px;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.nav-bar {
+    background-color: #B7B7B7;
+    margin-top: 80px; /* Adjust to ensure it's right below the fixed top bar */
+    padding: 15px 10px;
+}
+
+.nav-bar ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.nav-bar ul li {
+    margin: 0 15px;
+}
+
+.nav-bar ul li a {
+    color: white;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.nav-bar ul li a:hover {
+    background-color: #EDDFE0;
+    border-radius: 5px;
+    color: #705C53;
+}
+
+.page-layout {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.1rem; /* space between nav bar and content */
+    padding: 20px;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 15%; /* Fixed width for the sidebars */
+    background-color: #705C53;
+    color: #EDDFE0;
+    padding: 20px;
+    position: relative;
+    height: fit-content/* Adjust for fixed header height */;
+    border-radius: 1rem;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    margin: 15px 0px;
+}
+
+.sidebar ul li a {
+    font-size: 1.1em;
+    color: #EDDFE0;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    font-size: larger;
+    text-shadow: 3px 2px 2px #333;
+}
+
+/* Central forum content styling */
+.forum-content {
+    width: 65%; /* Center area takes up most space */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.forum-content p {
+    font-size: 1.1em;
+}
+
+.forum-content img {
+    width: 100%;
+    height: auto;
+}
+
+.post {
+    margin-bottom: 20px;
+    border-bottom: 2px dashed #333;
+}
+
+.post p {
+    margin: 10px 0;
+}
+
+.post h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.post p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.post img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    box-shadow: 0px 4px 4px 2px #333;
+}
+
+/* Right sidebar styling (same as left) */
+.right-sidebar {
+    width: 15%;
+    height: 32rem;
+}
+
+@media (min-width: 1920px) {
+    body {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .sidebar ul li a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .search-container {
+        width: 200px;
+    }
+
+    .search-container input {
+        width: 100%; /* Make search input larger */
+        margin-top: 10px;
+    }
+
+    .page-layout {
+        display: flex;
+        flex-direction: row; /* Keep main content area beside sidebars */
+        position: relative; /* Allow positioning of sidebars */
+    }
+
+    .sidebar {
+        width: 28%; /* Set a width for sidebars */
+        margin-bottom: 20px; /* Add space between sidebars */
+        position: absolute; /* Position absolute to stack */
+        right: 0; /* Align to the right side */
+    }
+
+    .right-sidebar  {
+        height: 24rem;
+    }
+
+    .left-sidebar {
+        top: 26rem; /* Place left sidebar below right sidebar */
+    }
+
+    .forum-content {
+        width: 70%; /* Main content takes most space */
+        margin-right: 10px; /* Space to the right for sidebar */
+    }
+
+    .nav-bar {
+        margin-top: 125px;
+    }
+
+    .nav-bar ul li {
+        text-align: center; /* Center align for small screens */
+    }
+
+    .top-bar {
+        flex-direction: column; /* Stack top bar items */
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .top-bar {
+        flex-direction: column; /* Stack top bar items */
+        align-items: center;
+    }
+
+    .page-layout {
+        flex-direction: column; /* Stack the sidebars and main content */
+        align-items: center; /* Center align content */
+    }
+
+    .sidebar {
+        width: 100%; /* Full width for sidebars */
+        margin-bottom: 20px; /* Add space between sidebars */
+        position: relative; /* Change position for stacking */
+    }
+
+    .forum-content {
+        width: 100%; /* Central content area takes full width */
+        margin-bottom: 20px; /* Space below forum content */
+    }
+
+    .left-sidebar {
+        position: relative;
+        top: 0;
+        order: 2; /* Move left sidebar below the right sidebar */
+    }
+
+    .nav-bar ul {
+        flex-direction: column; /* Stack nav items */
+    }
+
+    .nav-bar ul li {
+        text-align: center; /* Center align for small screens */
+    }
+}
