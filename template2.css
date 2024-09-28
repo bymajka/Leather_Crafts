@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Fredoka', sans-serif;
+    background-color: #F5F5F7;
+    font-size: 18px;
+}
+
+.page-layout {
+    display: flex; /* Use flexbox for layout */
+    margin: 80px 20px 0px 20px;
+}
+
+/* Top bar styling */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #705C53;
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it is above other elements */
+}
+
+/* Logo styling */
+.logo img {
+    height: 40px; /* Adjust logo size as needed */
+    border-radius: 1rem;
+}
+
+/* Search bar styling */
+.search-container {
+    flex-grow: 1; /* Allow the search bar to take up remaining space */
+    margin: 0 20px; /* Margin for spacing */
+}
+
+.search-container input {
+    width: 100%; /* Full width */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Cart button styling */
+.cart-button {
+    background-color: #B7B7B7;
+    opacity: 0.8; /* Transparent background */
+    border: none; /* No border */
+    color: #333; /* White text */
+    padding: 10px;
+    border-radius: 10%;
+    font-size: 20px; /* Adjust size for the cart icon */
+    cursor: pointer; /* Pointer on hover */
+}
+
+.cart-button:hover {
+    opacity: 1;
+    background-color: #F5F5F7;
+    color: #705C53;
+}
+
+.menu {
+    min-width: 15%;
+    background-color: #705C53; /* Light background for contrast */
+    padding: 20px;
+    position: sticky; /* Keeps it in view */
+    top: 70px; /* Below the fixed top bar */
+    height: calc(100vh - 80px); /* Full height minus top bar */
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu h3 {
+    margin-bottom: 10px;
+    font-size: larger;
+    color: #EDDFE0;
+    margin-bottom: 1rem;
+}
+
+.menu ul {
+    list-style-type: none;
+}
+
+.menu ul li {
+    margin-bottom: 10px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #EDDFE0;
+}
+
+.menu ul li a:hover {
+    font-size: larger;
+    text-shadow: 3px 2px 2px #333;
+}
+
+/* Main content */
+main {
+    padding-top: 70px; /* Space for the fixed top bar */
+    padding: 0 20px; /* General padding for content */
+    flex: 1;
+}
+
+/* Product grid styling */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns with equal width */
+    gap: 20px; /* Spacing between products */
+}
+
+.product-card {
+    background-color: #EDDFE0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: 1s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    transition: 1s;
+}
+
+.product-card img {
+    width: 15rem;
+    height: 10rem;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0px 2px 4px 2px #705C53;
+}
+
+/* Flexbox layout for product name, price, and button */
+.product-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.product-details {
+    text-align: left; /* Align name and price to the left */
+}
+
+.product-details h2 {
+    margin: 0;
+    color: #705C53;
+    font-size: 18px;
+}
+
+.product-details .price {
+    color: #777;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* Styling for the buy button */
+.buy-button {
+    background-color: #B7B7B7;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buy-button:hover {
+    background-color: #F5F5F7;
+    color: #B7B7B7;
+}
+
+/* Medium screens (up to 1440px) */
+@media (max-width: 1440px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    }
+}
+
+/* Small screens (up to 1024px) */
+@media (max-width: 1024px) {
+    .menu {
+        margin-bottom: 20px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    }
+}
+
+/* Extra small screens (up to 768px) */
+@media (max-width: 768px) {
+    .page-layout {
+        flex-direction: column;
+    }
+
+    .menu {
+        position: relative;
+        top: 0;
+        width: 100%;
+        height: 10rem;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* 1 column */
+    }
+
+    .search-container input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .buy-button {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    .product-details h2 {
+        font-size: 16px;
+    }
+
+    .product-details .price {
+        font-size: 14px;
+    }
+}
