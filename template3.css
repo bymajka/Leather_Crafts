@@ -117,7 +117,7 @@ h2 {
 }
 
 .catalog {
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(140, 140, 140, 0.3), rgba(0, 0, 0, 0.5)), url(catalog_img.jpg);
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(140, 140, 140, 0.3), rgba(0, 0, 0, 0.5)), url(images/step_page/catalog_img.jpg);
     background-size: cover;
     padding: 2rem 6rem;
     display: flex;
