@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Fredoka', sans-serif;
+    background-color: #F5F5F7;
+    font-size: 18px;
+}
+
+h1 {
+    font-size: 4em;
+    color: #584740;
+}
+
+h2 {
+    font-size: 2em;
+    margin: 0.5em 0;
+    color: #584740;
+}
+
+h3 {
+    font-weight: 400;
+    color: #584740;
+}
+
+.page-layout {
+    flex: 1; /* This ensures the content takes up the remaining space between the header and footer */
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px;
+    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+}
+
+.logo-article {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    margin: 3em 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-posts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5rem;
+    margin: 2em 4em;
+}
+
+.side-post {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2em;
+    padding: 0.5em;
+    border: 4px solid lightgray;
+    box-shadow: 2px 2px 3px gray;
+}
+
+.side-post div p {
+    color: #705C53;
+}
+
+.side-post img {
+    float: left;
+    max-width: 13em;
+    height: auto;
+}
+
+input {
+    width: 40em;
+    height: 3em;
+    justify-content: center;
+    text-transform: uppercase; /* Makes placeholder text uppercase */
+    text-align: center; /* Centers the placeholder text */
+    padding: 10px;
+    border-radius: 1em;
+    transition: 0.5s;
+    background-color: #EDDFE0;
+    color: #705C53;
+    outline: none;
+    border: none;
+}
+
+input::placeholder {
+    color: #705C53;
+}
+
+input:focus {
+    transition: 0.5s;
+    box-shadow: 0px 3px 2px #333;
+}
+
+.subscribe {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
+}
+
+.subscribe button {
+    width: 10em;
+    text-transform: uppercase; /* Makes button text uppercase */
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #705C53;
+    border: none;
+    border-radius: 1em;
+    color: #EDDFE0;
+    transition: 0.5s;
+}
+
+.subscribe button:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+    box-shadow: 0px 3px 2px #333;
+}
+
+/* Other styles remain the same */
+
+.footer {
+    background-color: #705C53;
+    color: white;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    /* Ensure the footer stays at the bottom */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Logo in the footer */
+.footer-logo img {
+    height: 3rem;
+    border-radius: 1rem;
+}
+
+/* Footer links styling */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.footer-column h3 {
+    margin-bottom: 10px;
+    color: #EDDFE0;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #EDDFE0;
+}
+
+.footer-column ul li a:hover {
+    text-shadow: 2px 2px 2px #333;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1200px) {
+    .page-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .side-posts {
+        flex-direction: column;
+        gap: 2rem;
+        margin: 1.5em;
+    }
+
+    input {
+        width: 30em;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .side-posts {
+        flex-direction: column;
+        flex-wrap: wrap; 
+        gap: 1.5rem;
+    }
+
+    .side-post {
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+
+    input {
+        width: 20em;
+        height: 2.5em;
+    }
+
+    .subscribe button {
+        width: 8em;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    img {
+        height:6em;
+        width: auto;
+    }
+
+    .page-layout {
+        padding: 0 10px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .side-posts {
+        margin: 1em 0;
+    }
+
+    .side-post {
+        gap: 1em;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    .subscribe button {
+        width: 100%;
+    }
+
+    .footer {
+        padding: 20px;
+    }
+
+    .footer-content {
+        width: auto;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
