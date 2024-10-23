@@ -1,170 +1,142 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
-
+@import 'https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap';
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
 body {
-    font-family: 'Fredoka', sans-serif;
-    background-color: #F5F5F7;
-    font-size: 18px;
-    color: #EDDFE0;
+  font-family: 'Fredoka', sans-serif;
+  background-color: #f5f5f7;
+  font-size: 18px;
+  color: #eddfe0;
 }
-
 img {
-    box-shadow: 0px 2px 4px 1px #EDDFE0;
-    border-radius: 5px;
+  box-shadow: 0px 2px 4px 1px #eddfe0;
+  border-radius: 5px;
 }
-
 h1 {
-    font-size: 4rem;
-    color: #ffffff;
-    text-shadow: 1px 1px 2px #F5F5F7;
+  font-size: 4rem;
+  color: #fff;
+  text-shadow: 1px 1px 2px #f5f5f7;
 }
-
 h2 {
-    font-size: 1.5rem;
-    color: #fff;
-    text-shadow: 1px 1px 2px #F5F5F7;
-    padding: 0.5em 0;
+  font-size: 1.5rem;
+  color: #fff;
+  text-shadow: 1px 1px 2px #f5f5f7;
+  padding: 0.5em 0;
 }
-
 .page-layout {
-    display: flex;
-    justify-content: space-between; /* Space between main content and sticky block */
-    margin-top: 4rem; /* space between nav bar and content */
-    padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+  padding: 20px;
 }
-
 section {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
-
 .top-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #705C53;
-    display: flex;
-    justify-content: center;
-    padding: 10px 20px;
-    color: white;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #705c53;
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+  color: #fff;
+  z-index: 1000;
 }
-
 .logo img {
-    height: 50px;
-    width: auto;
-    border-radius: 1rem;
+  height: 50px;
+  width: auto;
+  border-radius: 1rem;
 }
-
 .forum-content {
-    flex: 1; /* Allow main content to grow and take available space */
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto auto auto;
-    background-color: #705C53;
-    gap: 1rem;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto auto;
+  background-color: #705c53;
+  gap: 1rem;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 }
-
 .forum-content article:nth-child(3) {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
-
 .forum-content article:nth-child(3) img {
-    width: 50%;
-    height: auto;
+  width: 50%;
+  height: auto;
 }
-
 .forum-content article h1 {
-    margin-bottom: 0.5em;
+  margin-bottom: 0.5em;
 }
-
 .forum-content article p {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
-
 .forum-content img {
+  width: 100%;
+  height: auto;
+}
+.sticky-block {
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  top: 4rem;
+  width: 20%;
+  background-color: #705c53;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  height: fit-content;
+  margin-left: 1rem;
+}
+.sticky-block div h2 {
+  margin-bottom: 0.5em;
+}
+@media (max-width: 1200px) {
+  .forum-content {
+    grid-template-columns: 1fr;
+  }
+  .forum-content img {
     width: 100%;
     height: auto;
+  }
+  h2 {
+    font-size: large;
+  }
+  .sticky-block div p {
+    font-size: smaller;
+  }
 }
-
-.sticky-block {
-    position: sticky;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    top: 4rem; /* Distance from the top of the viewport */
-    width: 20%; /* Set width for the sticky block */
-    background-color: #705C53;
-    padding: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    height: fit-content; /* Adjust height based on content */
-    margin-left: 1rem; /* Space between content and sticky block */
-}
-
-.sticky-block div h2 {
-    margin-bottom: 0.5em;
-}
-
-@media (max-width: 1200px) {
-    .forum-content {
-        grid-template-columns: 1fr; /* Stack columns on smaller screens */
-    }
-
-    .forum-content img {
-        width: 100%; /* Make images responsive and full-width */
-        height: auto; /* Maintain aspect ratio */
-    }
-
-    h2 {
-        font-size: large;
-    }
-
-    .sticky-block div p {
-        font-size: smaller;
-    }
-}
-
 @media (max-width: 768px) {
-    h1 {
-        font-size: 3rem; /* Reduce heading size */
-    }
-
-    h2 {
-        font-size: 1.2rem; /* Reduce subheading size */
-    }
-
-    body {
-        font-size: 16px; /* Slightly smaller font size */
-    }
-
-    .page-layout {
-        flex-direction: column;
-    }
-
-    .sticky-block {
-        width: 100%;
-        height: auto;
-        position: relative;
-        margin-left: 0;
-        top: 1em;
-    }
-
-    .forum-content {
-        padding: 10px; /* Less padding on smaller screens */
-    }
-
-    .forum-content img {
-        width: 100%; /* Ensure images take full width in the grid */
-        height: auto; /* Maintain aspect ratio */
-    }
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  body {
+    font-size: 16px;
+  }
+  .page-layout {
+    flex-direction: column;
+  }
+  .sticky-block {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-left: 0;
+    top: 1em;
+  }
+  .forum-content {
+    padding: 10px;
+  }
+  .forum-content img {
+    width: 100%;
+    height: auto;
+  }
 }

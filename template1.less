@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+@primary-color: #705C53;
+@secondary-color: #B7B7B7;
+@accent-color: #EDDFE0;
+@text-color: #333;
+@font-family: 'Fredoka', sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: @font-family;
+    background-color: #F5F5F7;
+    font-size: 18px;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: @primary-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+    z-index: 1000;
+
+    .logo img {
+        height: 40px;
+        width: auto;
+        border-radius: 1rem;
+    }
+
+    .search-container {
+        width: 250px;
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+    }
+}
+
+.nav-bar {
+    background-color: @secondary-color;
+    margin-top: 80px;
+    padding: 15px 10px;
+
+    ul {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+
+        li {
+            margin: 0 15px;
+
+            a {
+                color: @text-color;
+                text-decoration: none;
+                font-weight: bold;
+                padding: 10px 20px;
+                font-size: 1.2em;
+                font-family: @font-family;
+
+                &:hover {
+                    background-color: @accent-color;
+                    border-radius: 5px;
+                    color: @primary-color;
+                }
+            }
+        }
+    }
+}
+
+.page-layout {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.1rem;
+    padding: 20px;
+
+    .sidebar,
+    .right-sidebar {
+        width: 15%;
+        background-color: @primary-color;
+        color: @accent-color;
+        padding: 20px;
+        border-radius: 1rem;
+
+        ul {
+            list-style-type: none;
+
+            li {
+                margin: 15px 0;
+
+                a {
+                    font-size: 1.1em;
+                    color: @accent-color;
+                    text-decoration: none;
+
+                    &:hover {
+                        font-size: larger;
+                        text-shadow: 3px 2px 2px @text-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .forum-content {
+        width: 65%;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+        p {
+            font-size: 1.1em;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        .post {
+            margin-bottom: 20px;
+            border-bottom: 2px dashed @text-color;
+
+            h2 {
+                color: @text-color;
+                margin-bottom: 10px;
+            }
+
+            p {
+                line-height: 1.6;
+                margin-bottom: 10px;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+                margin-top: 10px;
+                box-shadow: 0px 4px 4px 2px @text-color;
+            }
+        }
+    }
+}
+
+@media (min-width: 1920px) {
+    body {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .sidebar ul li a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .search-container {
+        width: 200px;
+
+        input {
+            margin-top: 10px;
+        }
+    }
+
+    .page-layout {
+        flex-direction: row;
+        position: relative;
+    }
+
+    .sidebar {
+        width: 28%;
+        margin-bottom: 20px;
+        position: absolute;
+        right: 0;
+    }
+
+    .forum-content {
+        width: 70%;
+        margin-right: 10px;
+    }
+
+    .nav-bar {
+        margin-top: 125px;
+    }
+}
+
+@media (max-width: 600px) {
+    .page-layout {
+        flex-direction: column;
+        align-items: center;
+
+        .sidebar {
+            width: 100%;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .forum-content {
+            width: 100%;
+        }
+    }
+
+    .nav-bar ul {
+        flex-direction: column;
+
+        li {
+            text-align: center;
+        }
+    }
+}
