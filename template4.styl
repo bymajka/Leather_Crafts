@@ -1,0 +1,146 @@
+font-url = 'https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap'
+background-color = #F5F5F7
+primary-color = #705C53
+text-color = #EDDFE0
+white-color = #ffffff
+
+@import font-url
+
+* 
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+body 
+  font-family: 'Fredoka', sans-serif
+  background-color: background-color
+  font-size: 18px
+  color: text-color
+
+img 
+  box-shadow: 0px 2px 4px 1px text-color
+  border-radius: 5px
+
+h1 
+  font-size: 4rem
+  color: white-color
+  text-shadow: 1px 1px 2px background-color
+
+h2 
+  font-size: 1.5rem
+  color: white-color
+  text-shadow: 1px 1px 2px background-color
+  padding: 0.5em 0
+
+.page-layout 
+  display: flex
+  justify-content: space-between
+  margin-top: 4rem 
+  padding: 20px
+
+section 
+  margin-bottom: 2rem
+
+.top-bar 
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  background-color: primary-color
+  display: flex
+  justify-content: center
+  padding: 10px 20px
+  color: white
+  z-index: 1000
+
+.logo img 
+  height: 50px
+  width: auto
+  border-radius: 1rem
+
+.forum-content 
+  flex: 1 
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  grid-template-rows: auto auto auto
+  background-color: primary-color
+  gap: 1rem
+  padding: 20px
+  border-radius: 10px
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1)
+
+.forum-content article:nth-child(3) 
+  display: flex
+  flex-direction: row
+
+.forum-content article:nth-child(3) img 
+  width: 50%
+  height: auto
+
+.forum-content article h1 
+  margin-bottom: 0.5em
+
+.forum-content article p 
+  margin-bottom: 1em
+
+.forum-content img 
+  width: 100%
+  height: auto
+
+.sticky-block 
+  position: sticky
+  display: flex
+  flex-direction: column
+  gap: 1em
+  top: 4rem 
+  width: 20% 
+  background-color: primary-color
+  padding: 10px
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1)
+  border-radius: 10px
+  height: fit-content 
+  margin-left: 1rem 
+
+.sticky-block div h2 
+  margin-bottom: 0.5em
+
+@media (max-width: 1200px) 
+  .forum-content 
+    grid-template-columns: 1fr 
+
+  .forum-content img 
+    width: 100% 
+    height: auto 
+
+  h2 
+    font-size: large
+
+  .sticky-block div p 
+    font-size: smaller
+
+@media (max-width: 768px) 
+  h1 
+    font-size: 3rem 
+
+  h2 
+    font-size: 1.2rem 
+
+  body 
+    font-size: 16px 
+
+  .page-layout 
+    flex-direction: column
+
+  .sticky-block 
+    width: 100%
+    height: auto
+    position: relative
+    margin-left: 0
+    top: 1em
+
+  .forum-content 
+    padding: 10px 
+
+  .forum-content img 
+    width: 100% 
+    height: auto 
